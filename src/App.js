@@ -1,13 +1,13 @@
 import React from 'react'
 import './Clock.scss'
-import Clock1 from './Clock1'
-import Clock2 from './Clock2'
+import ClockUsingClass from './ClockUsingClass'
+import ClockUsingHooks from './ClockUsingHooks'
 
 const App = () => {
     return (
         <div className="clock-app">
-            <Clock1 />
-            {/* <Clock2 /> */}
+            {/* <ClockUsingClass /> */}
+            <ClockUsingHooks />
         </div>
     )
 }

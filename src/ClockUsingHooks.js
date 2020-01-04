@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const Clock2 = (props) => {
+const ClockUsingHooks = props => {
     const [time, setTime] = useState(new Date())
 
     const changeTime = () => {
@@ -8,16 +8,17 @@ const Clock2 = (props) => {
     }
 
     useEffect(() => {
-        setInterval(() => {
+        const tick = setInterval(() => {
             changeTime()
         }, 1000)
+        return () => clearInterval(tick)
     })
     return (
         <div className="clock">
             <h1>Hello! This is a function component clock.</h1>
             <h2>It is {time.toLocaleTimeString()}.</h2>
-      </div>
+        </div>
     )
 }
 
-export default Clock2
+export default ClockUsingHooks
